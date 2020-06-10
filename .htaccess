@@ -1,0 +1,25 @@
+RewriteEngine on
+
+#RewriteCond %{HTTPS} off
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+#RewriteRule ^404$ wait.php
+
+RewriteRule ^problem\/([^\/]*)$ index.php?problem=$1&%{QUERY_STRING}
+RewriteRule ^recent$ index.php?recent=1&%{QUERY_STRING}
+RewriteRule ^rank$ index.php?rank=1&%{QUERY_STRING}
+
+RewriteRule ^admin$ index.php?admin=0
+RewriteRule ^admin\/delete\/([^\/]*)$ index.php?admin=$1&delete=1
+RewriteRule ^admin\/([^\/]*)$ index.php?admin=$1
+RewriteRule ^adminsave$ index.php?admin=0&save=1
+RewriteRule ^logout$ index.php?logout=1
+
+Options -Indexes
+
+ErrorDocument 404 /404
+ErrorDocument 403 /404
+ErrorDocument 500 /404
+
+
+
+
