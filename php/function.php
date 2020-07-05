@@ -47,12 +47,13 @@
         $ch = curl_init();
         //$result = get_fcontent('https://www.codechef.com/ide', $ch);
         $cookie = tempnam ("C:\\xampp\\tmp", "CURLCOOKIE");
+		$cookiestring = "ide=95ea0ca69d0343b5a2d13c2e2e3f2a74; SESS93b6022d778ee317bf48f7dbffe03173=7da2d3f3ec3e59186c8a64b7e91e379a; _gcl_au=1.1.1985136258.1591459371; __utmc=100380940; _ga=GA1.2.1556586954.1591459371; __utmz=100380940.1591525091.3.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); mtc_id=1902608; mtc_sid=3qda8dhxoky6o58ayfo31xa; mautic_device_id=3qda8dhxoky6o58ayfo31xa; _gid=GA1.2.112582864.1592483038; __utma=100380940.1556586954.1591459371.1592483040.1592487771.10; __utmt=1; _gat_UA-141612136-1=1; _gat=1; AWSALB=fw/VZjIw/vdZVsAJbYIiEFAYJAalsox8U8n3Nrewt05mgnEMckztZh8NDq645Ai+F6AQit38n9Isa8YyrNstqbFmhFFap5I5nNq7WS4RzHPVjZpGyIKglCmzww8x; AWSALBCORS=fw/VZjIw/vdZVsAJbYIiEFAYJAalsox8U8n3Nrewt05mgnEMckztZh8NDq645Ai+F6AQit38n9Isa8YyrNstqbFmhFFap5I5nNq7WS4RzHPVjZpGyIKglCmzww8x; __utmb=100380940.11.9.1592488015774";
         $headers = array(
-            'cookie: SESS93b6022d778ee317bf48f7dbffe03173=7da2d3f3ec3e59186c8a64b7e91e379a; _gcl_au=1.1.1985136258.1591459371; __utmc=100380940; _ga=GA1.2.1556586954.1591459371; _gid=GA1.2.180023537.1591459371; __utmz=100380940.1591525091.3.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); mautic_device_id=3qda8dhxoky6o58ayfo31xa; mtc_id=1902608; mtc_sid=3qda8dhxoky6o58ayfo31xa; __utma=100380940.1556586954.1591459371.1591525091.1591538765.4; AWSALB=1d5V4c2hZzEzsuNVIeqINwDEh9ejrs5+62B6nKMhbAe6o5DMfXfR83bE2BCnS3mKyxzOG2YUjq+CmT3cAtDE56/82giCuBNCFf3z8iWIuzE9C+vVWI9W8VR/tS6b; AWSALBCORS=1d5V4c2hZzEzsuNVIeqINwDEh9ejrs5+62B6nKMhbAe6o5DMfXfR83bE2BCnS3mKyxzOG2YUjq+CmT3cAtDE56/82giCuBNCFf3z8iWIuzE9C+vVWI9W8VR/tS6b',
-            'x-csrf-token: 15d661bdea4c50edf32af9611bffe894',
+            'cookie: ' . $cookiestring,
+            'x-csrf-token: e4624203e46bd39da2be286c592c6985',
             'x-requested-with: XMLHttpRequest',
         );
-        $result = get_fcontent($url, $ch, $cookie, $data, 0, 5, $headers);
+        $result = get_fcontent($url, $ch, null, $data, 0, 5, $headers);
         if (!is_array($result)) { return "Không kết nối được với máy chủ :( bạn thông cảm thử lại sau :("; }
         $info = json_decode($result[0],true);
         //var_dump($info);

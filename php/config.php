@@ -38,7 +38,7 @@
     define("_DB_SETTING_HOST", "localhost");
     define("_DB_SETTING_ACCOUNT", "root");
     define("_DB_SETTING_PASSWORD", "");
-    define("_DB_SETTING_DB", "vinh");
+    define("_DB_SETTING_DB", "tuan");
 
 	// THIẾT LẬP BỘ COMPLIER ONLINE
 	// Sử dụng tại codechef.com/ide

@@ -3,7 +3,7 @@ if (!defined("_WEB_NAME")) die();
 $p = new Problem;
 $_list = $p->get_List();
 ?>
-<h4 class="display-4" style="font-size: 2em"><i class="fa fa-list" aria-hidden="true"></i> Problem list <small><sup class="badge badge-default"><?= count($_list) ?> <i class="fa fa-bug" aria-hidden="true"></i></sup></small>
+<h4 class="display-4" style="font-size: 2em"><i class="fa fa-list" aria-hidden="true"></i> Danh sách vấn đề <small><sup class="badge badge-default"><?= count($_list) ?> <i class="fa fa-bug" aria-hidden="true"></i></sup></small>
     <div class="pull-right">
         <?php
             if (is_Admin()) {
